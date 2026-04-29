@@ -5,7 +5,7 @@ A small Flask application for hot-seat, LAN, and play-by-mail style Diplomacy ad
 ## Features
 <img width="430" height="270" align="right" alt="Web-Diplomacy" src="https://github.com/user-attachments/assets/6720ebc4-90b2-48a0-a884-6e6acc87322f" />
 
-- Uses the supplied SVG board as the rendered game board.
+- Uses SVG board as source of truth for game state
 - Shows/hides SVG unit positions by changing `*_pos_A`, `*_pos_F`, and `*_pos_Fs` classes.
 - Updates supply-center circles by changing `*_sc` classes.
 - Optional controlled-land recolouring via `ctrl_*` classes.
