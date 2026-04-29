@@ -1,0 +1,610 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 610 560" width="610" height="560">
+	<style>
+        .box { fill: #ccbbaa; stroke: #000000; stroke-width: 2; rx: 18; ry: 18; }
+
+		.t1 { font-size: 16px;fill: #000000;font-weight: 400;font-family: "LiberationSans", "Liberation Sans" }
+		.t2 { font-size: 13px;fill: #ffffff;font-weight: 400;font-family: "LiberationSans", "Liberation Sans" } 
+		.unusable { fill: #bbeebb; } 
+		.impassable { fill: #441100;stroke: #000000;stroke-linejoin: round } 
+		.sea { fill: #99bbff;stroke: #000000;stroke-linejoin: round } 
+
+		.unit_en { fill: #ff77ff;stroke: #000000 } 
+		.unit_de { fill: #444455;stroke: #000000 } 
+		.unit_ru { fill: #7777aa;stroke: #000000 } 
+		.unit_tu { fill: #eeee44;stroke: #000000 }
+		.unit_ah { fill: #ff0000;stroke: #000000 } 
+		.unit_it { fill: #00cc00;stroke: #000000 } 
+		.unit_fr { fill: #0000ff;stroke: #000000 } 
+		.unit_in { fill: #ddffdd;stroke: #000000 }
+
+        .ctrl_en { fill: #ffaaff;stroke: #000000;stroke-linejoin: round }
+        .ctrl_de { fill: #666666;stroke: #000000;stroke-linejoin: round }
+        .ctrl_ru { fill: #aaaabb;stroke: #000000;stroke-linejoin: round }
+        .ctrl_tu { fill: #dddd77;stroke: #000000;stroke-linejoin: round }
+        .ctrl_ah { fill: #ff5566;stroke: #000000;stroke-linejoin: round }
+        .ctrl_it { fill: #66ff77;stroke: #000000;stroke-linejoin: round }
+        .ctrl_fr { fill: #6688ff;stroke: #000000;stroke-linejoin: round } 
+		.ctrl_in { fill: #aacc99;stroke: #000000;stroke-linejoin: round } 
+
+        .unoccupied { display: none;} <!-- `display: inline` to enable for visual debugging -->
+ 
+	</style>
+
+    <defs>
+
+        <g id="F" transform="translate(9,10)">
+        <polygon id="triangle" points="-4,-3 8,-3 -3,-11" />
+        <polygon id="trap" points="-12,-3 -6,3 6,3 12,-3" />
+        </g>
+
+        <g id="A" transform="translate(7,7)">
+          <!-- diagonal strokes -->
+          <line x1="9" y1="-6" x2="2" y2="0" />
+          <line x1="9" y1="0"  x2="0" y2="-6" />
+
+          <!-- rounded bar -->
+          <rect x="-11" y="-6" width="17" height="4" />
+          <circle cx="6" cy="-4" r="2" />
+
+          <!-- circle -->
+          <circle cx="1" cy="0" r="6" />
+        </g>
+
+    </defs>
+
+<!-- START BOARD -->
+
+	<path id="Layer 1" class="unusable" d="m415 212v342h-350v-342z"/>
+
+    <!-- Note: Some territories are necessarily rendered out of the usual alphabetical order -->
+	<g id="NTH" transform="translate(185,225)">
+		<path class="sea" d="m-14 -28 v-16 c0 -3.55 0.7 -7.06 2.06 -10.33 1.35 -3.28 3.34 -6.25 5.85 -8.76 2.51 -2.51 5.48 -4.5 8.76 -5.85 3.27 -1.36 6.78 -2.06 10.33 -2.06 h43 v70 h7 l-3 13 h-34 v64 h-38 l-8 -8 -25 -96 z"/>
+		<text class="t2">NTH</text>
+        <use id="NTH_pos_F" transform="translate(5,-30)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="NWG" transform="translate(200,90)">
+		<path class="sea" d="m162 -57 l-5 6 -14 5 -19 10 -4 10 -10 11 -1 9 -6 2 -11 25 -15 21 -8 2 -5 8 -6 -1 -22 13 h-38 l-27 27 v16 l-13 -4 -6 1 2 -6 7 -3 1 -4 -14 -4 v-177 h214 z"/>
+		<text class="t2">NWG</text>
+        <use id="NWG_pos_F" transform="translate(2,10)" href="#F" class="unoccupied"/>
+	</g>
+ 
+
+    <g id="ADR" transform="translate(285,448)">
+		<path class="sea" d="m37 32 l-25 -24 3 -3 h-10 l-12 -10 -6 -19 -12 -7 1 -16 9 -3 6 1 -1 4 3 7 4 -9 4 1 3 16 17 18 25 18 v23 l4 3 z"/>
+		<text class="t2">ADR</text>
+        <use id="ADR_pos_F" transform="translate(22,2)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="AEG" transform="translate(390,525)">
+		<path class="sea" d="m-14 12 l-5 -17 7 1 -1 -8 9 3 -1 -7 -15 -15 1 -3 7 3 -10 -11 3 -6 8 7 3 -1 -1 -6 5 1 -6 -6 h12 l8 -4 8 2 2 3 4 2 -4 7 -1 5 8 -1 v3 l3 6 -3 3 v9 l6 3 4 14 8 -1 v7 l-19 19 -4 -2 -25 -1 -4 -2 z"/>
+		<text class="t2">AEG</text>
+        <use id="AEG_pos_F" transform="translate(2,3)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Alb" transform="translate(330,475)">
+		<path class="ctrl_in" d="m1 -21 v23 l4 3 4 7 11 -10 v-6 l-4 -5 v-14 l-9 -6 -7 -1 z"/>
+		<text class="t2">Alb</text>
+        <use id="Alb_pos_A" transform="translate(0,-10)" href="#A" class="unoccupied"/>
+        <use id="Alb_pos_F" transform="translate(-4,-22)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Ank" transform="translate(510,455)">
+		<path class="ctrl_tu" d="m45 -17 l-4 -1 -31 4 -6 -3 -3 2 -9 -7 -21 5 -11 9 -6 10 4 4 v18 l-2 12 h7 l17 -11 11 2 7 -2 23 -20 15 2 9 -2 2 -11 z"/>
+		<text class="t2">Ank</text>
+		<circle id="Ank_sc" class="unit_tu" cx="-28" cy="14" r="4" />
+        <use id="Ank_pos_A" transform="translate(-20,-10)" href="#A" class="unoccupied"/>
+        <use id="Ank_pos_F" transform="translate(-35,-15)" href="#F" class="unit_tu"/>
+	</g>
+
+	<g id="Apu" transform="translate(291,470)">
+		<path class="ctrl_it" d="m13 14 l6 -4 8 5 h4 v-5 l-25 -24 3 -3 h-10 l-12 -10 -4 4 5 4 1 4 -1 3 14 23 z"/>
+		<text class="t2">Apu</text>
+        <use id="Apu_pos_A" transform="translate(2,-2)" href="#A" class="unoccupied"/>
+        <use id="Apu_pos_F" transform="translate(10,-3)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Arm" transform="translate(575,460)">
+		<path class="ctrl_tu" d="m34 33 l-25 -15 -21 1 -1 -8 -6 -4 -1 -7 2 -11 -2 -11 15 -11 19 15 5 -3 9 2 6 -1 z"/>
+		<text class="t2">Arm</text>
+        <use id="Arm_pos_A" transform="translate(2,2)" href="#A" class="unoccupied"/>
+        <use id="Arm_pos_F" transform="translate(-16,-27)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="BAL" transform="translate(312,252)">
+		<path class="sea" d="m-46 3 l5 5 7 -6 -1 -4 3 -2 -1 -5 3 10 7 1 5 -9 11 -1 7 -15 -1 -9 h48 l-10 9 -2 14 v5 l1 6 -4 8 -7 2 -3 9 -6 1 -2 -9 -12 1 -7 7 -13 2 -8 -1 1 -7 -7 -1 -14 9 -5 -1 -1 -5 -4 -3 v-3 l-2 -8 z"/>
+		<text class="t2">BAL</text>
+        <use id="BAL_pos_F" transform="translate(-17,-2)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="BAR" transform="translate(420,25)">
+		<path class="sea" d="m120 -25 l-5 9 -5 -3 -13 13 -1 14 -3 5 v-15 l-6 -3 -2 6 -6 7 -7 15 3 10 -7 2 -9 -3 -2 -2 4 -5 -8 -7 -7 2 6 17 6 4 v8 l-6 -2 -4 2 -11 17 12 9 -2 6 -5 3 -18 -8 -2 9 5 5 7 4 -2 3 -18 -4 -8 -15 v-9 l-12 -6 -2 -5 33 1 12 -5 2 -13 -6 -5 -36 -14 -12 2 -4 -4 -4 3 -6 -1 4 -6 -1 -3 -10 -5 -2 7 -2 -7 -3 -2 -3 7 -3 -5 -5 9 v-9 h-4 v-33 z"/>
+		<text class="t2">BAR</text>
+        <use id="BAR_pos_F" transform="translate(2,4)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Bel" transform="translate(187,318)">
+		<path class="ctrl_in" d="m4 -19 l3 4 12 3 -1 5 3 4 2 11 -5 5 -13 -8 -8 -8 -15 -4 4 -10 z"/>
+		<text class="t2">Bel</text>
+		<circle id="Bel_sc" class="unit_in" cx="-1" cy="-13" r="4" />
+        <use id="Bel_pos_A" transform="translate(0,-12)" href="#A" class="unoccupied"/>
+        <use id="Bel_pos_F" transform="translate(-5,-17)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Ber" transform="translate(268,292)">
+		<path class="ctrl_de" d="m26 -17 l-8 -1 1 -7 -7 -1 -14 9 v8 l-4 4 2 6 -3 3 2 14 25 -5 8 -5 1 -4 -5 -6 z"/>
+		<text class="t2">Ber</text>
+		<circle id="Ber_sc" class="unit_de" cx="13" cy="6" r="4" />
+        <use id="Ber_pos_A" transform="translate(0,0)" href="#A" class="unit_de"/>
+        <use id="Ber_pos_F" transform="translate(0,-30)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="BLA" transform="translate(460,425)">
+		<path class="sea" d="m-20 33 l-10 -3 -4 -5 -4 -9 3 -14 4 -1 1 -3 2 -14 7 -5 -1 -7 8 -19 13 -3 2 2 -2 2 6 4 11 -2 2 2 -6 2 -4 7 9 4 v5 l9 3 2 -7 6 -1 3 -4 10 -3 -1 -5 -12 3 -9 -9 18 -14 23 -13 1 3 -13 11 3 6 h3 l-5 13 -4 -1 -1 3 7 7 11 1 26 12 13 2 6 9 -3 10 -15 11 -4 -1 -31 4 -6 -3 -3 2 -9 -7 -21 5 -11 9 -6 10 -22 3 z"/>
+		<text class="t2" x="5" y="-3">BLA</text>
+        <use id="BLA_pos_F" transform="translate(-10,0)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Boh" transform="translate(278,340)">
+		<path class="ctrl_ah" d="m3 16 l-5 -10 -8 -3 -4 -14 2 -4 12 1 10 -5 9 1 14 12 3 -2 7 7 1 8 -6 1 -13 -2 -8 3 -3 8 z"/>
+		<text class="t2">Boh</text>
+        <use id="Boh_pos_A" transform="translate(2,0)" href="#A" class="unoccupied"/>
+	</g>
+
+	<g id="Bre" transform="translate(125,345)">
+		<path class="ctrl_fr" d="m25 -26 l-6 -1 -2 -6 -6 -2 v16 l-12 -3 -2 -5 -20 -1 -2 5 3 6 6 1 14 15 -1 6 1 7 5 6 18 2 v-28 l2 -8 z"/>
+		<text class="t2">Bre</text>
+		<circle id="Bre_sc" class="unit_fr" cx="-19" cy="-23" r="4" />
+        <use id="Bre_pos_A" transform="translate(3,1)" href="#A" class="unoccupied"/>
+        <use id="Bre_pos_F" transform="translate(0,2)" href="#F" class="unit_fr"/>
+	</g>
+
+	<g id="Bud" transform="translate(330,392)">
+		<path class="ctrl_ah" d="m64 -16 l1 6 6 3 5 11 -5 6 h-14 l-20 4 -2 6 -5 1 -18 -3 -4 2 -3 -2 h-3 l-9 -2 -2 -10 -10 -4 -3 -11 3 -8 11 -5 13 -16 2 -4 13 -3 10 4 8 2 9 7 1 3 6 2 z"/>
+		<text class="t2">Bud</text>
+		<circle id="Bud_sc" class="unit_ah" cx="-4" cy="-16" r="4" />
+        <use id="Bud_pos_A" transform="translate(15,-25)" href="#A" class="unit_ah"/>
+	</g>
+
+	<g id="Bul" transform="translate(390,445)">
+		<path class="ctrl_in" d="m23 19 l-1 -10 8 -3 6 -1 -4 -9 3 -14 4 -1 1 -3 -8 -3 h-12 l-6 2 -6 5 -8 -2 -8 2 -7 -4 -5 2 -3 -4 -2 4 3 8 3 5"/>
+		<text class="t2">Bul</text>
+		<path class="ctrl_in" d="m-19 -7l-5 1 5 17-6 5 4 3h7l12-4 4 12 8-4 8 2 5-6-1-10"/>
+		<circle id="Bul_sc" class="unit_in" cx="377" cy="444" r="4" />
+        <use id="Bul_pos_A" transform="translate(0,0)" href="#A" class="unoccupied"/>
+        <use id="Bul_pos_F" transform="translate(20,-15)" href="#F" class="unoccupied"/>
+        <use id="Bul_pos_Fs" transform="translate(0,12)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Bur" transform="translate(180,368)">
+		<path class="ctrl_fr" d="m12 -45 l13 8 -1 7 7 8 2 6 -4 11 -1 4 -14 15 -16 -1 v9 l-5 6 -5 -1 -5 -8 2 -4 -7 -3 -2 -6 9 -9 20 -21 3 -12 z"/>
+		<text class="t2">Bur</text>
+        <use id="Bur_pos_A" transform="translate(12,-23)" href="#A" class="unoccupied"/>
+	</g>
+
+	<g id="Cly" transform="translate(133,201)">
+		<path class="ctrl_en" d="m5 13 l-8 -6 -1 -11 10 -8 1 -7 8 -5 14 4 -1 4 -7 3 -2 6 -6 6 -2 13 z"/>
+		<text class="t2">Cly</text>
+        <use id="Cly_pos_A" transform="translate(12,-22)" href="#A" class="unoccupied"/>
+        <use id="Cly_pos_F" transform="translate(14,-25)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Con" transform="translate(435,478)">
+		<path class="ctrl_tu" d="m-27 -8 l2 3 4 2 -4 7 -1 5 8 -1 v3 l6 -2 9 6 20 2 14 -4 2 -12 v-18 l-4 -4 -22 3 -2 -2 -10 -3 -4 -5 -6 1 -8 3 1 10 z"/>
+		<path class="sea" d="m-21 -3 l7 -8 14 -4 5 -5 2 2 -3 3 9 1 -23 11 z"/>
+		<text class="t2">Con</text>
+		<circle id="Con_sc" class="unit_tu" cx="-6" cy="-18" r="4" />
+        <use id="Con_pos_A" transform="translate(6,2)" href="#A" class="unit_tu"/>
+        <use id="Con_pos_F" transform="translate(-30,-8)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Den" transform="translate(245,250)">
+		<path class="ctrl_in" d="m34 -7 l-4 -1 -6 1 -3 -3 1 -6 -1 -13 -3 2 -15 1 -3 13 -2 10 1 7 10 1 h12 l5 5 7 -6 -1 -4 3 -2 z"/>
+		<path class="sea" d="m24 -7 l-1 3 -5 1 3 8 h-12 l3 -8 9 -7 z"/>
+		<text class="t2">Den</text>
+		<circle id="Den_sc" class="unit_in" cx="27" cy="2" r="4" />
+        <use id="Den_pos_A" transform="translate(2,-22)" href="#A" class="unoccupied"/>
+        <use id="Den_pos_F" transform="translate(2,-22)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="EAS" transform="translate(455,550)">
+		<path class="sea" d="m-20 -20 l6 -4 6 2 6 6 11 -3 2 -10 9 -1 10 8 6 2 14 -4 6 -12 9 3 7 -9 3 1 -5 9 1 12 6 5 -4 24 h-128 v-5 l14 -2 2 -3 z"/>
+		<text class="t2">EAS</text>
+        <use id="EAS_pos_F" transform="translate(-25,-10)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Edi" transform="translate(148,209)">
+		<path class="ctrl_en" d="m4 -15 l6 -1 13 4 -1 5 -5 8 -7 4 -7 1 6 1 4 2 2 8 -8 2 -10 -11 -1 -4 2 -13 z"/>
+		<text class="t2">Edi</text>
+		<circle id="Edi_sc" class="unit_en" cx="6" cy="10" r="4" />
+        <use id="Edi_pos_A" transform="translate(0,0)" href="#A" class="unoccupied"/>
+        <use id="Edi_pos_F" transform="translate(8,0)" href="#F" class="unit_en"/>
+	</g>
+
+	<g id="ENG" transform="translate(135,306)">
+		<path class="sea" d="m38 -5 l-4 10 -16 4 2 5 -5 -1 -6 -1 -2 -6 -6 -2 v16 l-12 -3 -2 -5 -20 -1 -14 -14 12 -12 10 1 10 3 4 -4 10 3 13 1 13 3 8 -2 z"/>
+		<text class="t2">ENG</text>
+        <use id="ENG_pos_F" transform="translate(-25,-8)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Fin" transform="translate(375,160)">
+		<path class="ctrl_ru" d="m-13 -53 l6 1 4 12 -6 1 -7 15 -14 15 2 9 3 5 -2 13 1 6 8 2 8 5 19 -6 18 -8 10 -16 -2 -9 4 -5 -4 -17 -8 -12 -1 -8 -9 -18 1 -19 -6 -5 1 -7 -2 -3 2 -4 -9 -6 -9 1 -1 12 -14 1 -9 -8 -4 7 14 10 z"/>
+		<text class="t2">Fin</text>
+        <use id="Fin_pos_A" transform="translate(0,5)" href="#A" class="unoccupied"/>
+        <use id="Fin_pos_F" transform="translate(-25,-10)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Gal" transform="translate(367,346)">
+		<path class="ctrl_ah" d="m-34 -16 h8 l3 2 9 -5 3 -4 5 1 6 5 7 -2 5 -3 4 3 2 5 14 6 5 16 -1 6 1 11 -10 5 -10 -11 -6 -2 -1 -3 -9 -7 -8 -2 -10 -4 -13 3 -8 -4 -7 1 -1 -8 1 8 -1 -8 4 1 4 -2 z"/>
+		<text class="t2">Gal</text>
+        <use id="Gal_pos_A" transform="translate(12,2)" href="#A" class="unoccupied"/>
+	</g>
+
+	<g id="Gas" transform="translate(121,397)">
+		<path class="ctrl_fr" d="m7 -34 l-7 19 1 2 -10 15 1 8 10 5 11 5 1 -3 7 3 7 -14 8 -6 11 -2 -5 -8 2 -4 -7 -3 -2 -6 -7 -2 -3 -7 z"/>
+		<text class="t2">Gas</text>
+        <use id="Gas_pos_A" transform="translate(14,-22)" href="#A" class="unoccupied"/>
+        <use id="Gas_pos_F" transform="translate(2,-25)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Gre" transform="translate(345,495)">
+		<path class="ctrl_in" d="m-6 -8 l7 11 h4 l-3 2 5 8 15 -1 4 4 -16 -1 -5 4 7 7 2 12 1 -5 7 8 1 -5 8 6 -5 -17 7 1 -1 -8 9 3 -1 -7 -15 -15 1 -3 7 3 -10 -11 3 -6 8 7 3 -1 -1 -6 5 1 -6 -6 h12 l-4 -12 -12 4 h-7 l-8 3 -5 4 h-6 v6 z"/>
+		<text class="t2">Gre</text>
+		<circle id="Gre_sc" class="unit_in" cx="33" cy="12" r="4" />
+        <use id="Gre_pos_A" transform="translate(10,-20)" href="#A" class="unoccupied"/>
+        <use id="Gre_pos_F" transform="translate(22,-5)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="LYO" transform="translate(170,445)">
+		<path class="sea" d="m-55 24 l-5 -8 14 -17 7 -5 15 -1 11 -6 1 -7 v-7 l11 -6 7 5 12 5 10 -1 13 -5 11 -6 11 5 5 16 h-14 l-3 3 -10 2 2 15 5 3 v4 l-4 3 -8 1 -1 4 h-51 l-6 -3 -6 6 z"/>
+		<text class="t2">LYO</text>
+        <use id="LYO_pos_F" transform="translate(3,3)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="BOT" transform="translate(335,205)">
+		<path class="sea" d="m-24 15 l3 -11 8 -3 6 -3 3 -10 -5 -10 -6 -1 1 -21 9 -15 13 -8 8 -10 -4 -7 2 -9 6 -8 7 3 6 1 4 12 -6 1 -7 15 -14 15 2 9 3 5 -2 13 1 6 8 2 8 5 19 -6 18 -8 1 6 8 1 3 3 h-6 l-8 5 -1 5 -12 -1 -16 2 -2 4 -4 2 3 6 4 3 1 8 4 6 -4 2 -7 -1 -7 -8 z"/>
+		<text class="t2">BOT</text>
+        <use id="BOT_pos_F" transform="translate(2,-1)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="HEL" transform="translate(215,265)">
+		<path class="sea" d="m30 -28 l-2 10 1 7 -1 3 2 6 -1 7 v3 l-9 4 -1 -3 -4 -1 -4 2 -15 -1 v-37 z"/>
+		<text class="t2">HEL</text>
+        <use id="HEL_pos_F" transform="translate(3,-25)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Hol" transform="translate(198,297)">
+		<path class="ctrl_in" d="m28 -22 l1 5 -2 12 -5 6 -5 -1 -2 5 -3 11 -2 2 -3 -4 1 -5 -12 -3 -3 -4 7 -10 7 -13 v3 h2 l4 -5 z"/>
+		<text class="t2">Hol</text>
+		<circle id="Hol_sc" class="unit_in" cx="7" cy="-13" r="4" />
+        <use id="Hol_pos_A" transform="translate(0,-5)" href="#A" class="unoccupied"/>
+        <use id="Hol_pos_F" transform="translate(0,-28)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="ION" transform="translate(305,540)">
+		<path class="sea" d="m-16 -29 l1 3 5 1 13 -15 3 -9 -7 -7 6 -4 8 5 h4 v-5 h13 l4 7 7 11 h4 l-3 2 5 8 15 -1 4 4 -16 -1 -5 4 7 7 2 12 1 -5 7 8 1 -5 8 6 7 7 -3 3 3 3 17 4 v5 h-168 l2 -8 -2 -7 -7 -9 6 -4 5 -7 11 -11 11 6 15 12 8 1 1 -11 3 -8 v-2 z"/>
+		<text class="t2">ION</text>
+        <use id="ION_pos_F" transform="translate(15,-28)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="IRI" transform="translate(95,270)">
+		<path class="sea" d="m5 21 l12 -4 10 -6 8 1 -3 -6 -8 -4 h-3 l-1 -7 13 -3 -2 -6 -5 1 11 -7 h3 l4 -10 -3 -11 -6 -2 h-10 l-10 5 -1 14 -11 13 -11 -2 -17 4 -12 12 30 30 z"/>
+		<text class="t2" x="-2" y="3">IRI</text>
+        <use id="IRI_pos_F" transform="translate(-17,2)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Kie" transform="translate(233,290)">
+		<path class="ctrl_de" d="m11 -36 l-1 3 2 6 -1 7 v3 l-9 4 -1 -3 -4 -1 -4 2 1 5 -2 12 -5 6 -5 -1 -2 5 19 6 9 8 2 6 20 -12 -2 -14 3 -3 -2 -6 4 -4 v-8 l-5 -1 -1 -5 -4 -3 v-3 l-2 -8 z"/>
+		<path class="sea" d="m11 -20 v3 l12 -7 v-3 z"/>
+		<text class="t2">Kie</text>
+		<circle id="Kie_sc" class="unit_de" cx="21" cy="-12" r="4" />
+        <use id="Kie_pos_A" transform="translate(2,3)" href="#A" class="unoccupied"/>
+        <use id="Kie_pos_F" transform="translate(2,-28)" href="#F" class="unit_de"/>
+	</g>
+
+	<g id="Lvp" transform="translate(133,239)">
+		<path class="ctrl_en" d="m-5 23 l-2 -6 -5 1 11 -7 h3 l4 -10 -3 -11 -6 -2 v-4 l8 -6 v-3 l6 -1 1 4 10 11 v11 l-4 9 -1 16 -7 -2 z"/>
+		<text class="t2">Lvp</text>
+		<circle id="Lvp_sc" class="unit_en" cx="11" cy="18" r="4" />
+        <use id="Lvp_pos_A" transform="translate(0,1)" href="#A" class="unit_en"/>
+        <use id="Lvp_pos_F" transform="translate(-10,0)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Lvn" transform="translate(370,250)">
+		<path class="ctrl_ru" d="m-1 -48 l-4 2 3 6 4 3 1 8 4 6 -4 2 -7 -1 -7 -8 -10 9 -2 14 7 8 2 10 6 -1 5 5 -2 16 7 2 7 7 10 -5 3 -7 12 -3 1 -36 4 -11 -4 -11 -11 -12 -12 1 -10 -1 z"/>
+		<text class="t2">Lvn</text>
+        <use id="Lvn_pos_A" transform="translate(5,5)" href="#A" class="unoccupied"/>
+        <use id="Lvn_pos_F" transform="translate(-20,-32)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Lon" transform="translate(160,280)">
+		<path class="ctrl_en" d="m6 -11 l2 1 3 -2 6 2 1 4 -2 9 -11 10 7 1 -4 2 -8 2 -13 -3 -2 -14 5 -4 3 -6 z"/>
+		<text class="t2" x="-6" y="3">Lon</text>
+		<circle id="Lon_sc" class="unit_en" cx="2" cy="10" r="4" />
+        <use id="Lon_pos_A" transform="translate(-9,4)" href="#A" class="unoccupied"/>
+        <use id="Lon_pos_F" transform="translate(0,5)" href="#F" class="unit_en"/>
+	</g>
+
+	<g id="Mar" transform="translate(173,412)">
+		<path class="ctrl_fr" d="m-31 5 l7 -14 8 -6 11 -2 5 1 5 -6 v-9 l16 1 3 3 6 -6 4 7 -3 4 3 6 -6 3 3 3 -1 8 8 6 -13 5 -10 1 -12 -5 -7 -5 -11 6 v7 l-4 2 z"/>
+		<text class="t2">Mar</text>
+		<circle id="Mar_sc" class="unit_fr" cx="13" cy="5" r="4" />
+        <use id="Mar_pos_A" transform="translate(11,-22)" href="#A" class="unit_fr"/>
+        <use id="Mar_pos_F" transform="translate(20,0)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="MAO" transform="translate(50,355)">
+		<path class="sea" d="m52 -38 l-2 5 3 6 6 1 14 15 -1 6 1 7 5 6 -7 19 1 2 -10 15 -11 -3 -5 1 -24 -13 -13 -3 -5 -6 -6 -1 -2 4 -7 -3 -6 6 2 3 -3 12 -2 10 -13 21 h-3 l-4 6 3 7 2 1 -3 9 1 4 -5 8 11 7 8 -1 6 7 1 9 3 6 v5 l-4 1 -16 22 -17 2 v-247 h58 z"/>
+		<text class="t2">MAO</text>
+        <use id="MAO_pos_F" transform="translate(-10,-30)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Mos" transform="translate(460,255)">
+		<path class="ctrl_ru" d="m149 -138 l-11 15 -25 11 -9 16 -30 5 -19 5 -26 15 -13 -1 -18 11 -2 13 1 3 -6 3 -4 -4 -8 2 -11 14 -7 4 -12 -1 -4 11 -1 36 -12 3 -3 7 -10 5 7 19 4 -3 66 -14 12 3 9 -6 17 6 11 -15 11 6 10 1 7 -4 16 1 5 20 10 1 5 16 28 9 h12 z"/>
+		<text class="t2">Mos</text>
+		<circle id="Mos_sc" class="unit_ru" cx="21" cy="-21" r="4" />
+        <use id="Mos_pos_A" transform="translate(-25,0)" href="#A" class="unit_ru"/>
+	</g>
+
+	<g id="Mun" transform="translate(235,350)">
+		<path class="ctrl_de" d="m-1 16 l9 4 3 -1 4 2 17 -3 4 2 -2 -8 h6 l6 -6 -5 -10 -8 -3 -4 -14 2 -4 12 1 10 -5 -4 -7 4 -9 -25 5 -20 12 h-6 l-18 22 -8 2 2 6 -4 11 13 2 3 -3 7 1 z"/>
+		<text class="t2">Mun</text>
+		<circle id="Mun_sc" class="unit_de" cx="23" cy="9" r="4" />
+        <use id="Mun_pos_A" transform="translate(1,3)" href="#A" class="unit_de"/>
+	</g>
+
+	<g id="Nap" transform="translate(293,493)">
+		<path class="ctrl_it" d="m-22 -29 l5 10 14 13 4 15 -5 9 1 3 5 1 13 -15 3 -9 -7 -7 -11 -3 -14 -23 z"/>
+		<text class="t2">Nap</text>
+		<circle id="Nap_sc" class="unit_it" cx="-15" cy="-24" r="4" />
+        <use id="Nap_pos_A" transform="translate(2,-2)" href="#A" class="unoccupied"/>
+        <use id="Nap_pos_F" transform="translate(5,2)" href="#F" class="unit_it"/>
+	</g>
+
+	<g id="NAO" transform="translate(65,120)">
+		<path class="sea" d="m5 141 l-6 -11 3 -8 4 3 10 -11 -7 -6 6 -3 -2 -7 4 -1 7 3 h5 l1 -2 -1 -2 h3 l4 -4 h9 l9 5 1 10 h10 v-4 l8 -6 v-3 l-8 -6 -1 -11 10 -8 1 -7 8 -5 v-177 h-148 v273 h58 z"/>
+		<text class="t2">NAO</text>
+        <use id="NAO_pos_F" transform="translate(0,20)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Naf" transform="translate(130,536)">
+		<path class="ctrl_in" d="m73 -16 l-24 -5 -10 3 -19 -7 -33 -2 -11 2 -7 4 -10 -3 -5 6 -5 2 -11 -4 v-5 l-4 3 -18 -5 -4 -7 -1 -8 -4 1 -4 1 -16 22 -17 2 v39 h195 l2 -32 z"/>
+		<text class="t2">Naf</text>
+        <use id="Naf_pos_A" transform="translate(-20,-10)" href="#A" class="unoccupied"/>
+        <use id="Naf_pos_F" transform="translate(-30,-23)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Nwy" transform="translate(255,180)">
+		<path class="ctrl_in" d="m142 -132 l-6 -1 4 -6 -1 -3 -10 -5 -2 7 -2 -7 -3 -2 -3 7 -3 -5 -5 9 v-9 h-4 l-5 6 -14 5 -19 10 -4 10 -10 11 -1 9 -6 2 -11 25 -15 21 -8 2 -5 8 -6 -1 -22 13 1 6 -4 7 -2 13 2 6 -4 6 2 9 10 8 5 1 20 -9 4 -8 5 10 4 1 8 -27 -2 -7 5 -6 2 -31 9 -1 -1 -6 9 -11 -1 -11 3 -3 13 -30 8 3 -2 -10 11 1 1 -4 4 -7 9 8 14 -1 1 -12 9 -1 9 6 -2 4 2 3 z"/>
+		<text class="t2">Nwy</text>
+		<circle id="Nwy_sc" class="unit_in" cx="15" cy="7" r="4" />
+        <use id="Nwy_pos_A" transform="translate(5,-25)" href="#A" class="unoccupied"/>
+        <use id="Nwy_pos_F" transform="translate(-25,-35)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Par" transform="translate(155,350)">
+		<path class="ctrl_fr" d="m-9 15 l3 7 7 2 9 -9 20 -21 3 -12 -16 -4 -7 3 h-6 l-11 -2 -2 8 z"/>
+		<text class="t2">Par</text>
+		<circle id="Par_sc" class="unit_fr" cx="18" cy="-16" r="4" />
+        <use id="Par_pos_A" transform="translate(-3,2)" href="#A" class="unit_fr"/>
+	</g>
+
+	<g id="Pic" transform="translate(164,322)">
+		<path class="ctrl_fr" d="m5 -11 l-16 4 2 5 -5 -1 -2 10 11 2 h6 l7 -3 16 4 4 -9 -8 -8 z"/>
+		<text class="t2">Pic</text>
+        <use id="Pic_pos_A" transform="translate(-9,-5)" href="#A" class="unoccupied"/>
+        <use id="Pic_pos_F" transform="translate(-13,-19)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Pie" transform="translate(212,405)">
+		<path class="ctrl_it" d="m-5 -19 l-3 4 3 6 -6 3 3 3 -1 8 8 6 11 -6 11 5 3 -4 -3 -7 13 -12 -3 -4 -14 -3 -2 5 -6 -5 -8 2 z"/>
+		<text class="t2" x="-2" y="2">Pie</text>
+        <use id="Pie_pos_A" transform="translate(11,-16)" href="#A" class="unoccupied"/>
+        <use id="Pie_pos_F" transform="translate(0,0)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Por" transform="translate(15,448)">
+		<path class="ctrl_in" d="m17 -52 l-2 10 -13 21 h-3 l-4 6 3 7 2 1 -3 9 1 4 -5 8 11 7 8 -1 9 -11 -2 -10 6 -6 -3 -10 5 1 10 -20 9 -1 1 -4 -7 -7 -13 -1 1 -4 z"/>
+		<text class="t2">Por</text>
+		<circle id="Por_sc" class="unit_in" cx="0" cy="-14" r="4" />
+        <use id="Por_pos_A" transform="translate(0,0)" href="#A" class="unoccupied"/>
+        <use id="Por_pos_F" transform="translate(0,0)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Pru" transform="translate(315,285)">
+		<path class="ctrl_de" d="m32 -42 v5 l1 6 -4 8 -7 2 -3 9 -6 1 -2 -9 -12 1 -7 7 -13 2 -2 15 5 6 -1 4 24 3 4 -4 2 -7 15 -5 4 2 14 -3 6 -5 2 -16 -5 -5 -6 1 -2 -10 z"/>
+		<text class="t2">Pru</text>
+        <use id="Pru_pos_A" transform="translate(-15,0)" href="#A" class="unoccupied"/>
+        <use id="Pru_pos_F" transform="translate(-15,-22)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Rom" transform="translate(257,452)">
+		<path class="ctrl_it" d="m-10 -10 l1 5 8 11 15 6 8 -6 1 -3 -1 -4 -5 -4 -11 -13 -13 4 z"/>
+		<text class="t2">Rom</text>
+		<circle id="Rom_sc" class="unit_it" cx="-4" cy="-7" r="4" />
+        <use id="Rom_pos_A" transform="translate(0,-5)" href="#A" class="unit_it"/>
+        <use id="Rom_pos_F" transform="translate(0,-5)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Ruh" transform="translate(210,325)">
+		<path class="ctrl_de" d="m3 -23 l-3 11 -2 2 2 11 -5 5 -1 7 7 8 8 -2 18 -22 h6 l-2 -6 -9 -8 z"/>
+		<text class="t2">Ruh</text>
+        <use id="Ruh_pos_A" transform="translate(0,2)" href="#A" class="unoccupied"/>
+	</g>
+
+	<g id="Rum" transform="translate(408,412)">
+		<path class="ctrl_in" d="m-5 -52 l1 11 -10 5 1 6 6 3 5 11 -5 6 h-14 l-20 4 -2 6 2 9 3 4 5 -2 7 4 8 -2 8 2 6 -5 6 -2 h12 l8 3 2 -14 7 -5 -1 -7 -11 2 -5 -17 1 -6 -9 -4 -3 -11 z"/>
+		<text class="t2">Rum</text>
+		<circle id="Rum_sc" class="unit_in" cx="-6" cy="1" r="4" />
+        <use id="Rum_pos_A" transform="translate(-27,-5)" href="#A" class="unoccupied"/>
+        <use id="Rum_pos_F" transform="translate(19,-7)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Ser" transform="translate(340,436)">
+		<path class="ctrl_in" d="m25 -24 l-5 1 -18 -3 -4 2 -3 -2 h-3 l-2 6 1 8 -4 5 3 8 7 9 9 6 v14 l4 5 h6 l5 -4 8 -3 -4 -3 6 -5 -5 -17 5 -1 -3 -5 -3 -8 2 -4 z"/>
+		<text class="t2">Ser</text>
+		<circle id="Ser_sc" class="unit_in" cx="3" cy="-17" r="4" />
+        <use id="Ser_pos_A" transform="translate(5,2)" href="#A" class="unoccupied"/>
+	</g>
+
+	<g id="Sev" transform="translate(490,350)">
+		<path class="ctrl_ru" d="m-52 47 l8 -19 13 -3 2 2 -2 2 6 4 11 -2 2 2 -6 2 -4 7 9 4 v5 l9 3 2 -7 6 -1 3 -4 10 -3 -1 -5 -12 3 -9 -9 18 -14 23 -13 1 3 -13 11 3 6 h3 l-5 13 -4 -1 -1 3 7 7 11 1 26 12 13 2 6 9 -3 10 19 15 5 -3 9 2 6 -1 v-110 h-12 l-28 -9 -5 -16 -10 -1 -5 -20 -16 -1 -7 4 -10 -1 -11 -6 -11 15 -17 -6 -9 6 2 8 -4 4 -6 38 -15 5 -11 10 -2 12 -9 4 -1 6 5 17 z"/>
+		<text class="t2">Sev</text>
+		<circle id="Sev_sc" class="unit_ru" cx="-7" cy="46" r="4" />
+        <use id="Sev_pos_A" transform="translate(-30,5)" href="#A" class="unoccupied"/>
+        <use id="Sev_pos_F" transform="translate(0,10)" href="#F" class="unit_ru"/>
+	</g>
+
+	<g id="Sil" transform="translate(300,315)">
+		<path class="ctrl_de" d="m-12 6 l9 1 14 12 3 -2 7 7 4 1 4 -2 4 -8 -7 -3 -3 -5 -3 -19 -24 -3 -8 5 -4 9 z"/>
+		<text class="t2">Sil</text>
+        <use id="Sil_pos_A" transform="translate(4,2)" href="#A" class="unoccupied"/>
+	</g>
+
+	<g id="SKA" transform="translate(245,220)">
+		<path class="sea" d="m-4 -11 l5 1 20 -9 4 -8 5 10 2 15 -1 6 6 12 -3 4 v3 l-4 -1 -6 1 -3 -3 1 -6 -1 -13 -3 2 -15 1 h-7 z"/>
+		<text class="t2">SKA</text>
+        <use id="SKA_pos_F" transform="translate(10,-14)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Smy" transform="translate(460,510)">
+		<path class="ctrl_tu" d="m-43 -21 l3 6 -3 3 v9 l6 3 4 14 8 -1 v7 l6 -4 6 2 6 6 11 -3 2 -10 9 -1 10 8 6 2 14 -4 6 -12 9 3 7 -9 3 1 6 -15 9 -8 10 -2 8 -5 -1 -8 -6 -4 -1 -7 -9 2 -15 -2 -23 20 -7 2 -11 -2 -17 11 h-7 l-14 4 -20 -2 -9 -6 z"/>
+		<text class="t2">Smy</text>
+		<circle id="Smy_sc" class="unit_tu" cx="-36" cy="-8" r="4" />
+        <use id="Smy_pos_A" transform="translate(35,-15)" href="#A" class="unit_tu"/>
+        <use id="Smy_pos_F" transform="translate(-30,5)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Spa" transform="translate(70,450)">
+		<path class="ctrl_in" d="m64 -33l-11-5-10-5-1-8-11-3-5 1-24-13-13-3-5-6-6-1-2 4-7-3-6 6 2 3-3 12 11-1-1 4 13 1 7 7-1 4-9 1-10 20-5-1 3 10"/>
+		<path class="ctrl_in" d="m-30 -9 l-6 6 2 10 -9 11 6 7 1 9 3 6 10 -2 5 1 8 -3 18 5 5 3 3 -9 4 -2 8 1 9 -10 6 -1 2 -4 -5 -8 14 -17 7 -5 15 -1 11 -6 1 -7 -4 2 -12 -10 -7 -3 -1 3 -11 -5"/>
+		<text class="t2">Spa</text>
+		<circle id="Spa_sc" class="unit_in" cx="10" cy="-18" r="4" />
+        <use id="Spa_pos_A" transform="translate(0,5)" href="#A" class="unoccupied"/>
+        <use id="Spa_pos_F" transform="translate(-5,-70)" href="#F" class="unoccupied"/>
+        <use id="Spa_pos_Fs" transform="translate(30,00)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Stp" transform="translate(425,175)">
+		<path class="ctrl_ru" d="m109 -11 l30 -5 9 -16 25 -11 11 -15 v-117 h-69 l-5 9 -5 -3 -13 13 -1 14 -3 5 v-15 l-6 -3 -2 6 -6 7 -7 15 3 10 -7 2 -9 -3 -2 -2 4 -5 -8 -7 -7 2 6 17 6 4 v8 l-6 -2 -4 2 -11 17 12 9 -2 6 -5 3 -18 -8 -2 9 5 5 7 4 -2 3 -18 -4 -8 -15 v-9 l-12 -6 -2 -5 33 1 12 -5 2 -13 -6 -5 -36 -14 -12 2 -4 -4 -4 3 -9 13 -1 7 6 5 -1 19 9 18 1 8 8 12 4 17"/>
+		<path class="ctrl_ru" d="m-11 -28 l-4 5 2 9 -10 16 1 6 8 1 3 3 h-6 l-8 5 -1 5 -12 -1 -16 2 -2 4 3 3 10 1 12 -1 11 12 4 11 12 1 7 -4 11 -14 8 -2 4 4 6 -3 -1 -3 2 -13 18 -11 13 1 26 -15 19 -5 30 -5"/>
+	    <text class="t2">Stp</text> 		    
+    	<circle id="Stp_sc" class="unit_ru" cx="-7" cy="12" r="4" />
+        <use id="Stp_pos_A" transform="translate(5,5)" href="#A" class="unoccupied"/>
+        <use id="Stp_pos_F" transform="translate(20,-120)" href="#F" class="unoccupied"/>
+        <use id="Stp_pos_Fs" transform="translate(-35,10)" href="#F" class="unit_ru"/>
+	</g>
+
+	<g id="Swe" transform="translate(290,200)">
+		<path class="ctrl_in" d="m-15 3 l2 15 -1 6 6 12 -3 4 v3 l3 10 7 1 5 -9 11 -1 7 -15 -1 -9 3 -11 8 -3 6 -3 3 -10 -5 -10 -6 -1 1 -21 9 -15 13 -8 8 -10 -4 -7 2 -9 6 -8 7 3 -6 -36 -14 -10 -1 4 -11 -1 2 10 -8 -3 -13 30 -3 3 1 11 -9 11 1 6 -9 1 -2 31 -5 6 2 7 -8 27 z"/>
+		<text class="t2">Swe</text>
+		<circle id="Swe_sc" class="unit_in" cx="33" cy="-4" r="4" />
+        <use id="Swe_pos_A" transform="translate(0,10)" href="#A" class="unoccupied"/>
+        <use id="Swe_pos_F" transform="translate(10,25)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Swi" transform="translate(209,379)">
+		<path class="impassable" d="m0 -16 l-1 4 -14 15 3 3 6 -6 4 7 6 1 8 -2 6 5 2 -5 14 3 2 -4 -4 -6 -7 -4 v-8 l-2 -3 -7 -1 -3 3 z"/>
+		<text class="t2">Swi</text>
+	</g>
+
+	<g id="Syr" transform="translate(560,535)">
+		<path class="ctrl_tu" d="m-30 -26 l6 -15 9 -8 10 -2 8 -5 21 -1 25 15 v66 h-81 l4 -24 -6 -5 -1 -12 z"/>
+		<text class="t2">Syr</text>
+        <use id="Syr_pos_A" transform="translate(-10,-30)" href="#A" class="unoccupied"/>
+        <use id="Syr_pos_F" transform="translate(-39,0)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Tri" transform="translate(305,425)">
+		<path class="ctrl_ah" d="m-29 -26 l-1 4 3 7 4 -9 4 1 3 16 17 18 25 18 -1 -9 7 1 -7 -9 -3 -8 4 -5 -1 -8 2 -6 -9 -2 -2 -10 -10 -4 -3 -11 -9 2 -5 -5 -5 5 -13 1 3 3 z"/>
+		<text class="t2">Tri</text>
+		<circle id="Tri_sc" class="unit_ah" cx="-21" cy="-29" r="4" />
+        <use id="Tri_pos_A" transform="translate(-5,-25)" href="#A" class="unoccupied"/>
+        <use id="Tri_pos_F" transform="translate(-10,-2)" href="#F" class="unit_ah"/>
+	</g>
+
+	<g id="Tun" transform="translate(203,545)">
+		<path class="ctrl_in" d="m29 14 l2 -8 -2 -7 -7 -9 6 -4 5 -7 -3 -1 -9 4 -1 -9 -5 -2 -6 1 -4 4 -5 -1 -6 7 -2 32 z"/>
+		<text class="t2">Tun</text>
+		<circle id="Tun_sc" class="unit_in" cx="17" cy="-16" r="4" />
+        <use id="Tun_pos_A" transform="translate(-2,-22)" href="#A" class="unoccupied"/>
+        <use id="Tun_pos_F" transform="translate(22,-5)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Tus" transform="translate(237,431)">
+		<path class="ctrl_it" d="m-4 -16 l5 16 9 11 3 -4 13 -4 -10 -16 -7 -2 -6 -1 -4 -4 z"/>
+		<text class="t2">Tus</text>
+        <use id="Tus_pos_A" transform="translate(0,-10)" href="#A" class="unoccupied"/>
+        <use id="Tus_pos_F" transform="translate(-10,-15)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Tyr" transform="translate(255,380)">
+		<path class="ctrl_ah" d="m-21 -14 l9 4 3 -1 4 2 17 -3 4 2 -2 -8 h6 l6 -6 11 1 3 5 -1 18 -5 5 -13 1 -8 -1 -9 3 -4 6 -5 3 -4 -5 -3 -4 2 -4 -4 -6 -7 -4 z"/>
+		<text class="t2">Tyr</text>
+        <use id="Tyr_pos_A" transform="translate(22,-10)" href="#A" class="unoccupied"/>
+	</g>
+
+	<g id="TYS" transform="translate(240,495)">
+		<path class="sea" d="m-2 -64 l9 11 1 5 8 11 15 6 5 10 14 13 4 15 -5 9 h-4 v-3 l-9 2 h-13 l-6 -3 -5 1 -5 5 -11 11 -3 -1 -9 4 -1 -9 -5 -2 v-26 h2 l4 -22 -2 -10 h-4 v-4 l5 -4 2 -6 v-8 l-1 -5 z"/>
+		<text class="t2">TYS</text>
+        <use id="TYS_pos_F" transform="translate(0,-25)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Ukr" transform="translate(420,340)">
+        <path class="ctrl_ru" d="m-37 -13 l2 5 14 6 5 16 -1 6 8 1 3 11 9 4 9 -4 2 -12 11 -10 15 -5 6 -38 4 -4 -2 -8 -12 -3 -66 14 -4 3 z"/>
+		<text class="t2">Ukr</text>
+        <use id="Ukr_pos_A" transform="translate(0,0)" href="#A" class="unoccupied"/>
+	</g>
+
+	<g id="Ven" transform="translate(247,410)">
+		<path class="ctrl_it" d="m31 33 l-6 -19 -12 -7 1 -16 9 -3 6 1 3 -10 -3 -3 -8 -1 -9 3 -4 6 -5 3 -4 -5 -13 12 3 7 4 4 6 1 7 2 10 16 11 13 z"/>
+		<text class="t2">Ven</text>
+		<circle id="Ven_sc" class="unit_it" cx="14" cy="-13" r="4" />
+        <use id="Ven_pos_A" transform="translate(5,0)" href="#A" class="unit_it"/>
+        <use id="Ven_pos_F" transform="translate(12,2)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Vie" transform="translate(307,360)">
+		<path class="ctrl_ah" d="m-15 -3 l3 -8 8 -3 13 2 6 -1 7 -1 8 4 -2 4 -13 16 -11 5 -3 8 -9 2 -5 -5 1 -18 z"/>
+		<text class="t2">Vie</text>
+		<circle id="Vie_sc" class="unit_ah" cx="-4" cy="0" r="4" />
+        <use id="Vie_pos_A" transform="translate(2,-2)" href="#A" class="unit_ah"/>
+	</g>
+
+	<g id="Wal" transform="translate(127,275)">
+		<path class="ctrl_en" d="m-27 16 l12 -4 10 -6 8 1 -3 -6 -8 -4 h-3 l-1 -7 13 -3 h15 l7 2 3 7 -3 6 -5 4 2 14 -13 -1 -10 -3 -4 4 -10 -3 z"/>
+		<text class="t2">Wal</text>
+        <use id="Wal_pos_A" transform="translate(0,0)" href="#A" class="unoccupied"/>
+        <use id="Wal_pos_F" transform="translate(-8,8)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="War" transform="translate(355,304)">
+		<path class="ctrl_ru" d="m-22 26 l-7 -3 -3 -5 -3 -19 4 -4 2 -7 15 -5 4 2 14 -3 6 -5 7 2 7 7 7 19 -3 18 -4 -3 -5 3 -7 2 -6 -5 -5 -1 -3 4 -9 5 -3 -2 z"/>
+		<text class="t2">War</text>
+		<circle id="War_sc" class="unit_ru" cx="-9" cy="-2" r="4" />
+        <use id="War_pos_A" transform="translate(0,3)" href="#A" class="unit_ru"/>
+	</g>
+
+	<g id="WES" transform="translate(150,495)">
+		<path class="sea" d="m-113 -5 l10 -2 5 1 8 -3 18 5 5 3 3 -9 4 -2 8 1 9 -10 6 -1 2 -4 h27 l8 2 4 -5 h51 l1 10 -2 9 4 7 h4 l5 -3 1 1 v26 l-6 1 -4 4 -5 -1 -24 -5 -10 3 -19 -7 -33 -2 -11 2 -7 4 -10 -3 -5 6 -5 2 -11 -4 v-5 l-4 3 -18 -5 -4 -7 -1 -8 -4 1 z"/>
+		<text class="t2">WES</text>
+        <use id="WES_pos_F" transform="translate(-25,-10)" href="#F" class="unoccupied"/>
+	</g>
+
+	<g id="Yor" transform="translate(150,258)">
+		<path class="ctrl_en" d="m13 -32 v13 l5 7 2 6 -1 13 -3 4 -13 2 -3 -7 1 -16 4 -9 v-11 z"/>
+		<text class="t2">Yor</text>
+        <use id="Yor_pos_A" transform="translate(5,-2)" href="#A" class="unoccupied"/>
+        <use id="Yor_pos_F" transform="translate(10,-20)" href="#F" class="unoccupied"/>
+	</g>
+
+<!-- END BOARD -->    
+
+<!-- TURN BOX -->
+    <g transform="translate(170,10)">
+      <rect class="box" x="0" y="0" width="120" height="40" />
+      <text id="turn" x="10" y="25" class="t1">SPRING 1901</text>
+    </g>
+<!-- END TURN BOX-->
+
+</svg>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Diplomacy Minimal Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <div>
+    <h1>Diplomacy</h1>
+    <p id="subhead">Minimal adjudication platform</p>
+  </div>
+  <nav>
+    <button id="btnNew" class="danger">New Game</button>
+    <button id="btnWriting">Advance to Writing</button>
+    <label class="toggle"><input id="ctrlLand" type="checkbox"> colour controlled land</label>
+  </nav>
+</header>
+
+<main>
+  <section class="board-card">
+    <div class="card-title">
+      <h2>Board</h2>
+      <span id="phaseBadge"></span>
+    </div>
+    <div class="board-wrap">
+      <object id="boardObject" type="image/svg+xml" data="/board.svg"></object>
+    </div>
+
+    <div class="board-phase-panels">
+      <section id="retreatPanel" class="panel embedded-panel hidden">
+        <h2>Retreat & Disbanding</h2>
+        <div id="retreats"></div>
+        <button id="btnRetreats" class="primary">Apply Retreats</button>
+      </section>
+
+      <section id="adjustPanel" class="panel embedded-panel hidden">
+        <h2>Unit Count Phase</h2>
+        <div id="adjustments"></div>
+        <button id="btnAdjustments" class="primary">Apply Unit Adjustments</button>
+      </section>
+    </div>
+
+    <section class="panel orders embedded-panel">
+      <div class="order-sheet-head">
+        <h2>Order Sheet</h2>
+        <div class="order-insert-tools" aria-label="Order command shortcuts">
+          <button id="btnInsertSupport" type="button" title="Insert support marker">Support</button>
+          <button id="btnInsertConvoy" type="button" title="Insert convoy marker">Convoy</button>
+        </div>
+      </div>
+      <p class="hint">Use country-prefixed lines, e.g. <code>Germany: A Ber-Kie, A Mun-Ruh, F Kie-Den</code>. Sea regions and secondary/south coasts use full capitals.</p>
+      <textarea id="ordersText" rows="8" spellcheck="false"></textarea>
+      <div id="ordersActions" class="row">
+        <button id="btnParse">Validate / Save</button>
+        <button id="btnResolve" class="primary">Resolve Orders</button>
+      </div>
+      <pre id="parseOut"></pre>
+    </section>
+  </section>
+
+  <aside class="side">
+    <section class="panel">
+      <h2>Power Counts</h2>
+      <table id="counts"></table>
+    </section>
+
+    <section class="panel">
+      <h2>Units</h2>
+      <div id="units"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Supply Centers</h2>
+      <div id="centers"></div>
+    </section>
+  </aside>
+
+
+  <section class="panel log-panel">
+    <h2>Resolution Log</h2>
+    <pre id="logs"></pre>
+  </section>
+
+  <section class="panel history">
+    <h2>History</h2>
+    <div id="history"></div>
+  </section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
